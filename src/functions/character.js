@@ -20,8 +20,9 @@ export default (character, features) => {
                 result = features.sequence[features.sequence.length - 1];
                 features.sequence.pop();
             } else {
-                result = !features.wasDeceived;
+                features.wasDeceived ? result = false : result = features.slyMode;
             }
+
             break;
         default:
             break;

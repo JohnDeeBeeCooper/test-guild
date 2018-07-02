@@ -9,8 +9,12 @@ export default (dealer, result) => {
             }
             break;
         case 'Ушлый':
-            if (result == false && dealer.features.sequence.length > 0) {
-                dealer.features.wasDeceived = true;
+            let quirky = dealer.features;
+            if (result === false && quirky.sequence.length > 0) {
+                quirky.wasDeceived = true;
+            }
+            if (quirky.sequence.length === 0 && quirky.wasDeceived === false) {
+                quirky.slyMode = result;
             }
             break;
         default:

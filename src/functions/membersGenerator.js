@@ -42,7 +42,8 @@ export default () => {
                         plan: [],
                         features: {
                             sequence: [1, 1, 0, 1],
-                            wasDeceived: false
+                            wasDeceived: false,
+                            slyMode: false
                         }
                     });
                     break;
