@@ -16,13 +16,17 @@ export default (character, features) => {
             result = result && !features.wasDeceived;
             break;
         case 'Ушлый':
-            result = features;
+            if (features.sequence.length) {
+                result = features.sequence[features.sequence.length - 1];
+                features.sequence.pop();
+            } else {
+                result = !features.wasDeceived;
+            }
             break;
         default:
             break;
     }
     const newRand = Math.floor(Math.random() * 101);
-    //console.log('result: ' + result);
-    //console.log('Показатель рандома:' + newRand);
-    return newRand < 5 ? !result : result;
+    console.log('Показатель рандома:' + newRand);
+    return newRand <= 5 ? !result : result;
 }

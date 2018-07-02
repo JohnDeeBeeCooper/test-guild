@@ -22,42 +22,42 @@ export default () => {
 
                 case 'Злопамятный':
                     arr.push({
-                            id: id,
-                            name: 'name' + id,
-                            strategy: character[i],
-                            gold: 0,
-                            plan: [],
+                        id: id,
+                        name: 'name' + id,
+                        strategy: character[i],
+                        gold: 0,
+                        plan: [],
                         features: {
                             wasDeceived: false
                         }
                     });
-            break;
+                    break;
 
-            case 'Ушлый':
-                arr.push({
-                    id: id,
-                    name: 'name' + id,
-                    strategy: character[i],
-                    gold: 0,
-                    plan: [],
-                    features: {
-                        sequence: [1, 0, 1, 1],
-                        wasDeceived: false
-                    }
-                });
-                break;
-            default:
-                arr.push({
-                    id: id,
-                    name: 'name' + id,
-                    strategy: character[i],
-                    gold: 0,
-                    plan: []
-                });
-                break;
+                case 'Ушлый':
+                    arr.push({
+                        id: id,
+                        name: 'name' + id,
+                        strategy: character[i],
+                        gold: 0,
+                        plan: [],
+                        features: {
+                            sequence: [1, 1, 0, 1],
+                            wasDeceived: false
+                        }
+                    });
+                    break;
+                default:
+                    arr.push({
+                        id: id,
+                        name: 'name' + id,
+                        strategy: character[i],
+                        gold: 0,
+                        plan: []
+                    });
+                    break;
+            }
+            id++;
         }
-        id++;
     }
-}
-return arr;
+    return arr;
 }

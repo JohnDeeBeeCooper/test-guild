@@ -1,10 +1,12 @@
 import character from "./character";
+import change from './change';
 
 export default (dealer1, dealer2) => {
     const deal1 = character(dealer1.strategy, dealer1.features);
     const deal2 = character(dealer2.strategy, dealer2.features);
+    change(dealer1, deal2);
+    change(dealer2, deal1);
     let log = `Сделка проходит между ${dealer1.name} и ${dealer2.name}.\n`;
-    //console.log(deal1);
     const result = deal1 && deal2;
     if (result) {
         dealer1.gold += 4;
@@ -18,9 +20,12 @@ export default (dealer1, dealer2) => {
         } else {
             deal1 ? dealer1.gold += 1 : dealer1.gold += 5;
             deal2 ? dealer2.gold += 1 : dealer2.gold += 5;
-            log += `Торговец ${deal1?dealer2.name:dealer1.name} жульничает и получает 5 золота. Торговец ${deal2?dealer1.name:dealer2.name} честно проводит сделку и получает 1 золото.`;
+            log += `Торговец ${deal1 ? dealer2.name : dealer1.name} жульничает и получает 5 золота. Торговец ${deal2 ? dealer2.name : dealer1.name} честно проводит сделку и получает 1 золото.`;
         }
 
+    }
+    if (dealer2.strategy === 'Ушлый') {
+        console.log(dealer2.features);
     }
     console.log(log)
     return [dealer1, dealer2, log];
