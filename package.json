@@ -1,6 +1,7 @@
 {
   "name": "test-rbk",
   "version": "0.1.0",
+  "homepage": "https://JohnDeeBeeCooper.github.io/test-guild/",
   "private": true,
   "dependencies": {
     "react": "^16.4.1",
