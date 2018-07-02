@@ -22,7 +22,7 @@ export default (character, features) => {
             break;
     }
     const newRand = Math.floor(Math.random() * 101);
-    console.log(result);
-    console.log(newRand);
-    return newRand < 5 ? result : !result;
+    //console.log('result: ' + result);
+    //console.log('Показатель рандома:' + newRand);
+    return newRand < 5 ? !result : result;
 }

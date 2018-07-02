@@ -1,7 +1,7 @@
 export default () => {
     const arr = [];
     let id = 0;
-    const countMembers = 5;
+    const countMembers = 6; // должно быть кратно количеству типов стратегий
     const character = ['Альтруист', 'Кидала', 'Хитрец', 'Непредсказуемый', 'Злопамятный', 'Ушлый'];
     for (let i = 0; i < character.length; i++) {
         for (let j = 0; j < countMembers / character.length; j++) {

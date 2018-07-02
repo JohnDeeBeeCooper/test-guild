@@ -8,12 +8,18 @@ div {
   max-width: 400px;
 }
 
+.log {
+  border: 1px solid gray;
+  min-width: 600px;
+  display: block;
+}
+
 .dealer {
   border: 1px solid gray;
 }
 
 .namespace,
-p {
+.year {
   background: #ccc;
   padding: 20px;
   font: 16pt "Kurale", sans-serif;
