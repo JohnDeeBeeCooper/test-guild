@@ -28,6 +28,5 @@ export default (character, features) => {
             break;
     }
     const newRand = Math.floor(Math.random() * 101);
-    console.log('Показатель рандома:' + newRand);
     return newRand <= 5 ? !result : result;
 }

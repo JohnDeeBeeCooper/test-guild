@@ -24,10 +24,6 @@ export default (dealer1, dealer2) => {
         }
 
     }
-    if (dealer2.strategy === 'Ушлый') {
-        console.log(dealer2.features);
-    }
-    console.log(log)
     return [dealer1, dealer2, log];
 
 }

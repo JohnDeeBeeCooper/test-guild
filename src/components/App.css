@@ -3,24 +3,31 @@ div {
 }
 
 .guild {
-  border: 1px solid gray;
+  display: inline-block;
+  border: 1px solid #00303F;
   min-width: 300px;
   max-width: 400px;
+  vertical-align: top;
+  float: left;
 }
 
 .log {
-  border: 1px solid gray;
-  min-width: 600px;
-  display: block;
+  border: 2px solid #00303F;
+  min-width: 300px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .dealer {
-  border: 1px solid gray;
+  border: 1px solid #00303F;
+  margin: 0 auto;
 }
 
 .namespace,
 .year {
-  background: #ccc;
+  background: #DCAE1D;
   padding: 20px;
   font: 16pt "Kurale", sans-serif;
 }
@@ -31,16 +38,16 @@ div {
   text-decoration: none;
   padding: .8em 1em calc(.8em + 3px);
   border-radius: 3px;
-  background: rgb(64, 199, 129);
-  box-shadow: 0 -3px rgb(53, 167, 110) inset;
+  background: #DCAE1D;
+  box-shadow: 0 -3px #DCAE1D inset;
   transition: 0.2s;
 }
 
 .btn:hover {
-  background: rgb(53, 167, 110);
+  background: #DCAE1D;
 }
 
 .btn:active {
-  background: rgb(33, 147, 90);
-  box-shadow: 0 3px rgb(33, 147, 90) inset;
+  background: #DCAE1D;
+  box-shadow: 0 3px rgb(185, 148, 26) inset;
 }

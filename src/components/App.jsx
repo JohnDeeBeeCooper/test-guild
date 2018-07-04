@@ -10,20 +10,22 @@ export default class extends Component {
     guild: membersGenerator(),
     id: 0,
     year: 700,
-    logs: []
+    logs: ['Пока ничего не произошло']
   }
   plusYear = () => {
-    this.setState({ year: this.state.year + 1, guild: passYear(this.state.guild)[0], logs: passYear(this.state.guild)[1] });
-    console.log(this.state.logs);
+    const guildList = passYear(this.state.guild);
+    guildList[0].sort((a, b) => b.gold - a.gold);
+    this.setState({ year: this.state.year + 1, guild: guildList[0], logs: guildList[1] });
   }
 
   render() {
     return (
-      <div className="container">
-        <button className="btn" onClick={this.plusYear}>Прокрутить год</button>
-        <Guild guild={this.state.guild} />
-        <Log logs={this.state.logs} />
-        <p className="year">{this.state.year} год н.э</p>
+      <div className="wrapper">
+        <button className="btn" onClick={this.plusYear}>Прокрутить год</button><p className="year">{this.state.year} год н.э</p>
+        <div className="container">
+          <Guild guild={this.state.guild} />
+          <Log logs={this.state.logs} />
+        </div>
       </div>
     );
   }
