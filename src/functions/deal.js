@@ -24,6 +24,6 @@ export default (dealer1, dealer2) => {
         }
 
     }
-    return [dealer1, dealer2, log];
+    return log;
 
 }

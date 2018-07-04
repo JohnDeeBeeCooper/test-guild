@@ -14,7 +14,7 @@ export default class extends Component {
   }
   plusYear = () => {
     const guildList = passYear(this.state.guild);
-    guildList[0].sort((a, b) => b.gold - a.gold);
+    guildList[0].sort((a, b) => b.total - a.total);
     this.setState({ year: this.state.year + 1, guild: guildList[0], logs: guildList[1] });
   }
 

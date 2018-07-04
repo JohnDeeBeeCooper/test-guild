@@ -5,13 +5,14 @@ import updateMembers from './updateMembers';
 export default (arr) => {
     const couples = makeCouples(arr, []);
     const logs = [];
-    couples.forEach((item,i,couples) => {
-        while (item.dealCount > 0) {
-            logs.push(deal(item.dealer1, item.dealer2)[2]);
-            item.dealCount--;
-        }
-    });
+    couples.forEach((item, i, couples) => {
+        couples = couples.filter(couple => couple.dealCount > 0);
+        const rand = Math.floor(Math.random() * couples.length);
+        const current = couples[rand];
+        logs.push(deal(current.dealer1, current.dealer2));
+        current.dealCount--;
 
-    updateMembers(arr,logs);
-    return [arr, logs];
+    });
+    const [newArr, newLogs] = updateMembers(arr, logs);
+    return [newArr, newLogs];
 }

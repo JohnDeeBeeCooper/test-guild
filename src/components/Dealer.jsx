@@ -7,7 +7,7 @@ export default (props) => {
             <ul className="dealer-list">
                 <li>Имя: {dealer.name}</li>
                 <li>Характер: {dealer.strategy}</li>
-                <li>Золото: {dealer.gold}</li>
+                {/* <li>Золото: {dealer.gold}</li> */}
                 <li>Золота с прошлых лет: {dealer.total}</li>
             </ul>
         </div>

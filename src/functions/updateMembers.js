@@ -4,26 +4,23 @@ export default (arr, logs) => {
     arr.sort((a, b) => b.gold - a.gold);
     const id = []
     logs.push('Конец года.');
-    const startDeleteId = arr.length - arr.length / 5;
-    arr = arr.filter(item => {
-        if (arr.length > startDeleteId + 1) {
+    const startDeleteId = arr.length - Math.floor(arr.length / 5);
+    const newArr = arr.filter(item => {
             if (arr[startDeleteId].gold < item.gold) {
                 item.total += item.gold;
                 item.gold = 0;
                 return true;
             } else {
-                logs.push(`Был изгнан ${item.name} имея при себе ${item.gold} золота`);
+                logs.push(`Был изгнан ${item.name}, заработав за этот год всего ${item.gold} золота`);
                 id.push(item.id);
                 return false;
             }
-        }
-        return false;
     });
     logs.push('Двери для новых торговцев открыты.');
     id.forEach((item, i, id) => {
-        const current = arr[i];
+        const current = newArr[i];
         const nameDealer = nameGenerator();
-        arr.push({
+        newArr.push({
             id: item,
             name: nameDealer,
             strategy: current.strategy,
@@ -32,5 +29,6 @@ export default (arr, logs) => {
             features: current.features
         });
         logs.push(`В гильдию явился ${nameDealer}. Добро пожаловать.`);
-    })
+    });
+    return [newArr, logs];
 }
