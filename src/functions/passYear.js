@@ -5,7 +5,7 @@ import updateMembers from './updateMembers';
 export default (arr) => {
     const couples = makeCouples(arr, []);
     const logs = [];
-    couples.map(item => {
+    couples.forEach((item,i,couples) => {
         while (item.dealCount > 0) {
             logs.push(deal(item.dealer1, item.dealer2)[2]);
             item.dealCount--;

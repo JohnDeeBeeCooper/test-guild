@@ -3,7 +3,7 @@ const makeCouples = (arr, result) => {
     if (newArr.length === 0) {
         return result;
     }
-    newArr.map(item => {
+    newArr.forEach((item, i, newArr) => {
         const obj = {
             dealer1: current,
             dealer2: item,
@@ -11,6 +11,7 @@ const makeCouples = (arr, result) => {
         };
         result.push(obj);
     }, []);
+
     return makeCouples(newArr, result)
 }
 export default makeCouples;
