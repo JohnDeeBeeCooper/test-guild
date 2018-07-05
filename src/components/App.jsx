@@ -23,8 +23,8 @@ export default class extends Component {
       <div className="wrapper">
         <button className="btn" onClick={this.plusYear}>Прокрутить год</button><p className="year">{this.state.year} год н.э</p>
         <div className="container">
-          <Guild guild={this.state.guild} />
           <Log logs={this.state.logs} />
+          <Guild guild={this.state.guild} />
         </div>
       </div>
     );
